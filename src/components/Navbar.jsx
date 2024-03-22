@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
-
+import './css/section.css'
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
 
@@ -21,7 +21,7 @@ const Navbar = () => {
     <div
       className={`mx-auto text-blue-800 flex w-full items-center justify-between border-gray-500  h-[5rem] p-8 ${
         isSticky
-          ? "!sticky top-0 bg-white z-[50] text-white transition-all duration-300 ease-in-out"
+          ? "stick top-0 bg-white z-[50] text-white transition-all duration-300 ease-in-out"
           : ""
       }`}
     >

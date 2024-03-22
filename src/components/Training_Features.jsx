@@ -6,20 +6,20 @@ const Training_Features = () => {
     <>
       <div
         id="events"
-        class="events-area events-bg-height pt-50 pb-50 bg-white"
+        className="events-area events-bg-height pt-50 pb-50 bg-white"
         style={{
           backgroundImage: `url(https://www.ashokitech.com/assets/frontend/images/go-ahed-bg.png)`,
           overflow: "hidden",
         }}
       >
-        <div class="container">
-          <div class="row">
+        <div className="container">
+          <div className="row">
             <div
-              class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1 wow fadeInUp"
+              className="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1 wow fadeInUp"
               style={{ visibility: "visible", animation: "fadeInUp" }}
             >
-              <div class="section-title mb-50 text-center">
-                <div class="section-title-heading mb-20">
+              <div className="section-title mb-50 text-center">
+                <div className="section-title-heading mb-20">
                   <motion.h1
                     initial={{ x: -1000 }}
                     animate={{ x: [0, 900, 0] }}
@@ -34,36 +34,36 @@ const Training_Features = () => {
             </div>
 
             <motion.div
-              class=" col-lg-6 mx-auto mb-md-4 mb-4"
+              className=" col-lg-6 mx-auto mb-md-4 mb-4"
               initial={{ x: -1000 }}
               animate={{ x: [0, 900, 0] }}
               transition={{ delay: 0.5 }}
               whileInView={{ x: [0, 900, 0] }}
               viewport={{ once: true }}
             >
-              <div class="single-events" style={{ overflow: "hidden" }}>
-                <div class="row">
+              <div className="single-events" style={{ overflow: "hidden" }}>
+                <div className="row">
                   <div
-                    class="col-lg-4 col-md-3 d-md-block d-none p-0"
+                    className="col-lg-4 col-md-3 d-md-block d-none p-0"
                     style={{ overflow: "hidden" }}
                   >
                     <img
                       src="https://www.ashokitech.com/assets/frontend/images/training1.png"
                       alt="training1"
-                      class="img-fluid"
+                      className="img-fluid"
                     />
                   </div>
 
-                  <div class="col-lg-8 col-md-9 col-12 p-md-0 p-3 bg-white">
-                    <div class="events-text white-bg">
-                      <div class="event-text-heading mb-10">
-                        <div class="events-text-title clearfix">
+                  <div className="col-lg-8 col-md-9 col-12 p-md-0 p-3 bg-white">
+                    <div className="events-text white-bg">
+                      <div className="event-text-heading mb-10">
+                        <div className="events-text-title clearfix">
                           <a href="#">
                             <h4>In-time Course Completion</h4>
                           </a>
                         </div>
                       </div>
-                      <div class="events-para">
+                      <div className="events-para">
                         <p>
                           Our courses are strategically and innovatively
                           designed, blending both theoretical and practical
@@ -80,36 +80,36 @@ const Training_Features = () => {
             </motion.div>
 
             <motion.div
-              class="col-lg-6 mx-auto mb-md-4 mb-4"
+              className="col-lg-6 mx-auto mb-md-4 mb-4"
               initial={{ x: 1000 }}
               animate={{ x: [0, -900, 0] }}
               transition={{ delay: 0.5 }}
               whileInView={{ x: [0, -900, 0] }}
               viewport={{ once: true }}
             >
-              <div class="single-events" style={{ overflow: "hidden" }}>
-                <div class="row">
+              <div className="single-events" style={{ overflow: "hidden" }}>
+                <div className="row">
                   <div
-                    class="col-lg-4 col-md-3 d-md-block d-none p-0"
+                    className="col-lg-4 col-md-3 d-md-block d-none p-0"
                     style={{ overflow: "hidden" }}
                   >
                     <img
                       src="https://www.ashokitech.com/assets/frontend/images/training2.png"
                       alt="training1"
-                      class="img-fluid"
+                      className="img-fluid"
                     />
                   </div>
 
-                  <div class="col-lg-8 col-md-9 col-12 p-md-0 p-3 bg-white">
-                    <div class="events-text white-bg">
-                      <div class="event-text-heading mb-10">
-                        <div class="events-text-title clearfix">
+                  <div className="col-lg-8 col-md-9 col-12 p-md-0 p-3 bg-white">
+                    <div className="events-text white-bg">
+                      <div className="event-text-heading mb-10">
+                        <div className="events-text-title clearfix">
                           <a href="#">
                             <h4>State-of-the-art Infrastructure</h4>
                           </a>
                         </div>
                       </div>
-                      <div class="events-para">
+                      <div className="events-para">
                         <p>
                           At Ashok IT Students study in a learning environment
                           supported by state-of-the-art infrastructure, new and
@@ -124,36 +124,36 @@ const Training_Features = () => {
             </motion.div>
 
             <motion.div
-              class="col-lg-6 mx-auto mb-md-4 mb-4"
+              className="col-lg-6 mx-auto mb-md-4 mb-4"
               initial={{ x: -1000 }}
               animate={{ x: [0, 900, 0] }}
               transition={{ delay: 0.5 }}
               whileInView={{ x: [0, 900, 0] }}
               viewport={{ once: true }}
             >
-              <div class="single-events" style={{ overflow: "hidden" }}>
-                <div class="row">
+              <div className="single-events" style={{ overflow: "hidden" }}>
+                <div className="row">
                   <div
-                    class="col-lg-4 col-md-3 d-md-block d-none p-0"
+                    className="col-lg-4 col-md-3 d-md-block d-none p-0"
                     style={{ overflow: "hidden" }}
                   >
                     <img
                       src="https://www.ashokitech.com/assets/frontend/images/training3.png"
                       alt="training3"
-                      class="img-fluid"
+                      className="img-fluid"
                     />
                   </div>
 
-                  <div class="col-lg-8 col-md-9 col-12 p-md-0 p-3 bg-white">
-                    <div class="events-text white-bg">
-                      <div class="event-text-heading mb-10">
-                        <div class="events-text-title clearfix">
+                  <div className="col-lg-8 col-md-9 col-12 p-md-0 p-3 bg-white">
+                    <div className="events-text white-bg">
+                      <div className="event-text-heading mb-10">
+                        <div className="events-text-title clearfix">
                           <a href="#">
                             <h4>Blended Training Approach</h4>
                           </a>
                         </div>
                       </div>
-                      <div class="events-para">
+                      <div className="events-para">
                         <p>
                           We adopt an integrated approach to training that helps
                           our students get both the IT knowledge and skills
@@ -171,36 +171,36 @@ const Training_Features = () => {
             </motion.div>
 
             <motion.div
-              class=" col-lg-6 mx-auto mb-md-4 mb-4"
+              className=" col-lg-6 mx-auto mb-md-4 mb-4"
               initial={{ x: 1000 }}
               animate={{ x: [0, -900, 0] }}
               transition={{ delay: 0.5 }}
               whileInView={{ x: [0, -900, 0] }}
               viewport={{ once: true }}
             >
-              <div class="single-events" style={{ overflow: "hidden" }}>
-                <div class="row">
+              <div className="single-events" style={{ overflow: "hidden" }}>
+                <div className="row">
                   <div
-                    class="col-lg-4 col-md-3 d-md-block d-none p-0"
+                    className="col-lg-4 col-md-3 d-md-block d-none p-0"
                     style={{ overflow: "hidden" }}
                   >
                     <img
                       src="https://www.ashokitech.com/assets/frontend/images/training4.png"
                       alt="training4"
-                      class="img-fluid"
+                      className="img-fluid"
                     />
                   </div>
 
-                  <div class="col-lg-8 col-md-9 col-12 p-md-0 p-3 bg-white">
-                    <div class="events-text white-bg">
-                      <div class="event-text-heading mb-10">
-                        <div class="events-text-title clearfix">
+                  <div className="col-lg-8 col-md-9 col-12 p-md-0 p-3 bg-white">
+                    <div className="events-text white-bg">
+                      <div className="event-text-heading mb-10">
+                        <div className="events-text-title clearfix">
                           <a href="#">
                             <h4>Free Demo Sessions</h4>
                           </a>
                         </div>
                       </div>
-                      <div class="events-para">
+                      <div className="events-para">
                         <p>
                           We also provide our prospective students with the
                           option to try the various programs and courses that we

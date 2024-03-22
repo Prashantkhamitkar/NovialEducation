@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 import "./css/home.css";
 const NavLinks = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,7 @@ const NavLinks = () => {
   };
   const toggleloginMenu = () => {
     setLoginmenu(!loginmenu);
-    console.log(loginmenu);
+    setIsOpen(false);
   };
 
   return (
@@ -76,7 +77,22 @@ const NavLinks = () => {
         </div>
       </div>
 
+      {loginmenu && (
+        <motion.div
+          style={{ x: loginmenu ? 0 : "100%" }}
+          className="fixed !transition-transform !duration-500 !ease-in-out top-0 right-0 h-screen w-[70%]  bg-white z-50"
+        >
+          <button
+            onClick={toggleloginMenu}
+            className="absolute top-0 right-0 m-[2.5rem] transition-transform duration-500 ease-in-out focus:outline-none text-gray-500"
+          >
+            <X size={24} />
+          </button>
+        </motion.div>
+      )}
+
       {/* Mobile Navigation */}
+
       <div className="md:hidden">
         <button
           onClick={toggleNavbar}
@@ -154,7 +170,6 @@ const NavLinks = () => {
           </div>
         </div>
       </div>
-      
     </nav>
   );
 };

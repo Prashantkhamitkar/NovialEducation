@@ -215,7 +215,6 @@ label {
 
 /* button style */
 .btn {
-
   background: #ec2025;
   border: medium none;
   border-radius: 5px;
@@ -458,7 +457,9 @@ label {
   line-height: 1.5;
   font-weight: 600;
 }
-
+.stick {
+  position: fixed;
+}
 @media only screen and (max-width: 1024px) {
   .header-contact p {
     display: inline-block;
@@ -575,8 +576,6 @@ li.shopping-cart a {
   right: 11px;
   color: #ddd;
 }
-
-
 
 .toggle-search-icon a:hover .toggle-search-box form {
   opacity: 1;
@@ -1478,7 +1477,6 @@ table.dataTable tbody td {
   border-bottom: none;
   font-size: 17px;
 }
-
 
 .course-details-tabs ul li a {
   padding: 13px 15px;
@@ -4225,7 +4223,6 @@ img.center.serviceImg {
     text-align: center;
   }
 
-
   .shopping-counter {
     position: absolute;
     top: -10px;
@@ -4684,7 +4681,6 @@ table.dataTable.display tbody tr.odd {
     opacity: 0;
   }
 }
-
 
 @media only screen and (max-width: 768px) {
   #home .header-area .header-bottom-area .mean-container a.meanmenu-reveal {
@@ -6661,7 +6657,7 @@ table.dataTable.display tbody tr.odd {
   margin: 4px;
   border: 2px solid #94a5b4;
   display: block;
-  
+
   -webkit-transition: opacity 200ms ease;
   -moz-transition: opacity 200ms ease;
   -ms-transition: opacity 200ms ease;
@@ -9938,10 +9934,10 @@ table.dataTable.display tbody tr.odd {
 @media only screen and (min-width: 640px) and (max-width: 767px) {
   .star-rating {
     display: inline-block;
-  
+
     margin-top: -28px;
     width: 100%;
-    
+
     padding: 1px 18px;
     text-align: right;
   }
@@ -9955,7 +9951,7 @@ table.dataTable.display tbody tr.odd {
 @media only screen and (min-width: 480px) and (max-width: 639px) {
   .star-rating {
     display: inline-block;
-  
+
     margin-top: -28px;
     width: 100%;
     padding: 1px 18px;
@@ -9970,7 +9966,7 @@ table.dataTable.display tbody tr.odd {
 @media only screen and (max-width: 479px) {
   .star-rating {
     display: inline-block;
-   
+
     margin-top: -28px;
     width: 100%;
 
