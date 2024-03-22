@@ -1,0 +1,71 @@
+/* alumini.css */
+
+/* Section Styles */
+.section.partners {
+  padding: 50px 0; /* Adjust padding as needed */
+}
+
+/* Section Header Styles */
+.section-header__title {
+  font-size: 24px; /* Adjust font size as needed */
+  text-align: center; /* Center align the title */
+}
+
+/* Partners Description Styles */
+.partners__description {
+  margin-top: 20px; /* Adjust margin as needed */
+  text-align: center; /* Center align the description */
+}
+
+/* Companies Container Styles */
+.partners__companies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center align the company icons */
+  margin-top: 20px; /* Adjust margin as needed */
+}
+
+/* Individual Company Styles */
+.partners__company {
+  margin: 10px; /* Adjust margin as needed */
+}
+
+/* Company Icon Styles */
+.partners__companies-icon {
+  display: block;
+  width: 100px; /* Adjust width as needed */
+  height: 100px; /* Adjust height as needed */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Company Count Styles */
+.partners__text {
+  margin-top: 20px; /* Adjust margin as needed */
+  font-size: 16px; /* Adjust font size as needed */
+  text-align: center; /* Center align the text */
+}
+/* Combined CSS including media queries */
+
+/* Default styles for all screen sizes */
+/* Default styles for all screen sizes */
+.partners__companies .partners__company {
+  width: calc(33.333% - 20px); /* Adjust margin as needed */
+}
+
+/* Tablet and below */
+@media only screen and (max-width: 768px) {
+  /* Adjust width to one-sixth on tablet and mobile devices */
+  .partners__companies .partners__company {
+    width: calc(16.666% - 20px); /* Adjust margin as needed */
+  }
+}
+
+/* Mobile devices */
+@media only screen and (max-width: 480px) {
+  /* Adjust width to one-sixth for smaller screens */
+  .partners__companies .partners__company {
+    width: calc(16.666% - 10px); /* Adjust margin as needed */
+  }
+}
+
