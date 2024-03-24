@@ -9,6 +9,7 @@ import Animation from "./Animation";
 import Training_Features from "./Training_Features";
 import Partner from "./Partner";
 
+
 const Home = () => {
   return (
     <>
@@ -23,7 +24,7 @@ const Home = () => {
       >
         <div className="sr-container ">
           <div className="banner__body">
-            <Text />
+           <Text />
             <InputBox />
           </div>
         </div>

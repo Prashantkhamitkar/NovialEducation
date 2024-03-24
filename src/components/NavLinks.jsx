@@ -3,15 +3,22 @@ import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import "./css/home.css";
+import SignUp from "./SignUp";
 const NavLinks = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [loginmenu, setLoginmenu] = useState(false);
+  const [loginform, setLoginform] = useState(true);
+  const [regiform, setregiform] = useState(false);
+  const [otprecieved, setotp] = useState(false);
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
+  
   };
   const toggleloginMenu = () => {
     setLoginmenu(!loginmenu);
     setIsOpen(false);
+      setregiform(false);
+      setLoginform(true);
   };
 
   return (
@@ -80,7 +87,7 @@ const NavLinks = () => {
       {loginmenu && (
         <motion.div
           style={{ x: loginmenu ? 0 : "100%" }}
-          className="fixed !transition-transform !duration-500 !ease-in-out top-0 right-0 h-screen w-[70%]  bg-white z-50"
+          className="fixed max-h-[100vh] overflow-x-hidden overflow-y-auto  !transition-transform !duration-500 !ease-in-out top-0 right-0 h-[100vh] w-[80%] md:w-[50%] bg-white z-50"
         >
           <button
             onClick={toggleloginMenu}
@@ -88,6 +95,71 @@ const NavLinks = () => {
           >
             <X size={24} />
           </button>
+          {loginform && (
+            <div className="mt-28 ml-8 flex flex-wrap flex-col">
+              <h1 className="text-gray-800 font-medium text-2xl md:text-4xl mb-3">
+                Login
+              </h1>
+              <div className="flex items-center">
+                <span className="text-gray-500 font-normal text-md lg:text-xl">
+                  or
+                </span>
+                <span
+                  className="ml-1 text-blue-500 lg:text-xl font-bold cursor-pointer"
+                  onClick={() => {
+                    setLoginform(!loginform);
+                    setregiform(!regiform);
+                  }}
+                >
+                  create your account
+                </span>
+              </div>
+
+              <div className="mt-8">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-xl leading-6 text-gray-900"
+                >
+                  <h4 className="text-gray-800 font-normal cursor-auto text-xl">
+                    Email Address
+                    <sup className="text-red-500 text-sm font-bold">*</sup>
+                  </h4>
+                </label>
+                <div className="relative mt-2 rounded-md shadow-sm">
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    className="block md:w-80 w-90 rounded-md border-0 py-1.5 pl-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
+                    placeholder="Enter Your Email"
+                  />
+                  {otprecieved && (
+                    <input
+                      type="text"
+                      name="otp"
+                      id="otp"
+                      className="block mt-4 md:w-50 w-70 rounded-md border-0 py-1.5 pl-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
+                      placeholder="Enter Your OTP"
+                    />
+                  )}
+                  <button
+                    className="bg-red-600 hover:bg-red-500 shadow-md text-white mt-4 px-6 py-2 font-bold rounded-md text-md"
+                    onClick={() => setotp(!otprecieved)}
+                  >
+                    Login
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+          {regiform && (
+            <SignUp
+              setLoginform={setLoginform}
+              setregiform={setregiform}
+              loginform={loginform}
+              regiform={regiform}
+            />
+          )}
         </motion.div>
       )}
 
