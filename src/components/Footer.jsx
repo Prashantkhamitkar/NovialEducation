@@ -3,6 +3,7 @@ import "./css/footer.css";
 import Logo from "./Logo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
@@ -14,14 +15,14 @@ const Footer = () => {
         <div className="sr-container">
           <div className="footer__parent" data-gtm-section="footer">
             <div className="footer__column--branding">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="footer__logo gtm-track-element"
                 data-gtm-tracking-allowed="true"
                 data-gtm-parent="logo"
               >
                 <Logo />
-              </a>
+              </Link>
               <div className="footer__love m-t-5">
                 <div className="footer__block">
                   <span className="h4">
@@ -38,112 +39,112 @@ const Footer = () => {
               </div>
               <ul className="footer__contents">
                 <li className="footer__list">
-                  <a
+                  <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="scaler_academy_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="scaler_academy_footer_link"
-                    href="/academy/"
+                    to="/"
                   >
                     Sogdo Academy
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                 <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="scaler_devops_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="scaler_devops_footer_link"
-                    href="/devops-course/"
+                    to="/devops-course/"
                   >
                     Sogdo DevOps
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                 <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="scaler_data_science_ml_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="scaler_data_science_ml_footer_link"
-                    href="/data-science-course/"
+                    to="/data-science-course/"
                   >
                     Sogdo Data Science &amp; ML
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                 <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="scaler_school_of_technology_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="scaler_school_of_technology_footer_link"
-                    href="/school-of-technology/"
+                    to="/school-of-technology/"
                   >
                     Sogdo School of Technology
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                 <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="scaler_neovarsity_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="scaler_neovarsity_footer_link"
-                    href="/neovarsity/"
+                    to="/neovarsity/"
                   >
                     Sogdo Neovarsity
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                 <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="scaler_edge_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="scaler_edge_footer_link"
-                    href="/edge/"
+                    to="/edge/"
                   >
                     Sogdo Edge
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                 <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="become_a_mentor_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="become_a_mentor_footer_link"
-                    href="/mentor/"
+                    to="/mentor/"
                   >
                     Become a Mentor
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                 <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="become_a_ta_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="become_a_ta_footer_link"
-                    href="/teaching-assistant/"
+                    to="/teaching-assistant/"
                   >
                     Become a TA
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                 <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="become_a_career_coach_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="become_a_career_coach_footer_link"
-                    href="/career-coach/"
+                    to="/career-coach/"
                   >
                     Become a Career Coach
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -153,100 +154,100 @@ const Footer = () => {
               </div>
               <ul className="footer__contents">
                 <li className="footer__list">
-                  <a
+                  <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="blog_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="blog_footer_link"
-                    href="/blog/"
+                    to="/feedback"
                   >
-                    Blog
-                  </a>
+                    FeedBack
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                  <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="about_us_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="about_us_footer_link"
-                    href="/about/"
+                    to="/about"
                   >
                     About us
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                  <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="contact_us_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="contact_us_footer_link"
-                    href="/contact/"
+                    to="/contact"
                   >
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                  <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="careers_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="careers_footer_link"
-                    href="/careers/"
+                    to="/careers"
                   >
                     Careers
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                  <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="review_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="review_footer_link"
-                    href="/review/"
+                    to="/review"
                   >
                     Review
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                  <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="join_our_discord_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="join_our_discord_footer_link"
-                    href="/discord/"
+                    to="/terms_condition/"
                   >
-                    Join Our Discord
-                  </a>
+                    Terms And Conditions
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                  <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="terms_of_use_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="terms_of_use_footer_link"
-                    href="/terms/"
+                    to="/refund"
                   >
-                    Terms of Use
-                  </a>
+                    Refund Policy & Shipment Policy
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                  <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="privacy_policy_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="privacy_policy_footer_link"
-                    href="/privacy/"
+                    to="/privacy"
                   >
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -256,94 +257,94 @@ const Footer = () => {
               </div>
               <ul className="footer__contents">
                 <li className="footer__list">
-                  <a
+                 <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="youtube_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="youtube_footer_link"
-                    href="https://www.youtube.com/scaler?sub_confirmation=1"
+                    to="https://www.youtube.com/scaler?sub_confirmation=1"
                     target="_blank"
                     rel="noreferrer"
                   >
                     <i className="footer__link-icon icon-play"></i>
                     Youtube
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                 <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="linkedin_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="linkedin_footer_link"
-                    href="https://www.linkedin.com/school/scaleracademy"
+                    to="https://www.linkedin.com/school/scaleracademy"
                     target="_blank"
                     rel="noreferrer"
                   >
                     <i className="footer__link-icon icon-linkedin-logo"></i>
                     LinkedIn
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                 <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="facebook_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="facebook_footer_link"
-                    href="https://www.facebook.com/scalerofficial"
+                    to="https://www.facebook.com/scalerofficial"
                     target="_blank"
                     rel="noreferrer"
                   >
                     <i className="footer__link-icon icon-facebook"></i>
                     Facebook
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                 <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="twitter_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="twitter_footer_link"
-                    href="https://twitter.com/scaler_official"
+                    to="https://twitter.com/scaler_official"
                     target="_blank"
                     rel="noreferrer"
                   >
                     <i className="footer__link-icon icon-twitter"></i>
                     Twitter
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                 <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="instagram_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="instagram_footer_link"
-                    href="https://www.instagram.com/scaler_official/"
+                    to="https://www.instagram.com/scaler_official/"
                     target="_blank"
                     rel="noreferrer"
                   >
                     <i className="footer__link-icon icon-instagram"></i>
                     Instagram
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__list">
-                  <a
+                 <Link
                     className="footer__link gtm-track-element"
                     data-gtm-element="reviews_on_quora_footer_link"
                     data-gtm-allowed-actions="click"
                     data-gtm-tracking-allowed="true"
                     data-cy="reviews_on_quora_footer_link"
-                    href="https://www.quora.com/What-is-your-review-of-Scaler-Academy"
+                    to="https://www.quora.com/What-is-your-review-of-Scaler-Academy"
                     target="_blank"
                     rel="noreferrer"
                   >
                     <i className="footer__link-icon icon-quora"></i>
                     Reviews on Quora
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -356,157 +357,157 @@ const Footer = () => {
             <div className="footer__content">
               <div className="footer__link footer__course-link">
                 <div className="footer__course-link__container">
-                  <a
-                    href="/topics/data-structures/"
+                 <Link
+                    to="/topics/data-structures/"
                     className="gtm-track-element"
                     data-gtm-tracking-allowed="true"
                     data-gtm-parent="footer"
                   >
                     Data Structures Tutorial
-                  </a>
+                  </Link>
                   <div className="footer__separator">
                     <span> | </span>
                   </div>
                 </div>
                 <div className="footer__course-link__container">
-                  <a
-                    href="/topics/python/"
+                 <Link
+                    to="/topics/python/"
                     className="gtm-track-element"
                     data-gtm-tracking-allowed="true"
                     data-gtm-parent="footer"
                   >
                     Python Tutorial
-                  </a>
+                  </Link>
                   <div className="footer__separator">
                     <span> | </span>
                   </div>
                 </div>
                 <div className="footer__course-link__container">
-                  <a
-                    href="/topics/java/"
+                 <Link
+                    to="/topics/java/"
                     className="gtm-track-element"
                     data-gtm-tracking-allowed="true"
                     data-gtm-parent="footer"
                   >
                     Java Tutorial
-                  </a>
+                  </Link>
                   <div className="footer__separator">
                     <span> | </span>
                   </div>
                 </div>
                 <div className="footer__course-link__container">
-                  <a
-                    href="/topics/dbms/"
+                 <Link
+                    to="/topics/dbms/"
                     className="gtm-track-element"
                     data-gtm-tracking-allowed="true"
                     data-gtm-parent="footer"
                   >
                     DBMS Tutorial
-                  </a>
+                  </Link>
                   <div className="footer__separator">
                     <span> | </span>
                   </div>
                 </div>
                 <div className="footer__course-link__container">
-                  <a
-                    href="/topics/c/"
+                 <Link
+                    to="/topics/c/"
                     className="gtm-track-element"
                     data-gtm-tracking-allowed="true"
                     data-gtm-parent="footer"
                   >
                     C Tutorial
-                  </a>
+                  </Link>
                   <div className="footer__separator">
                     <span> | </span>
                   </div>
                 </div>
                 <div className="footer__course-link__container">
-                  <a
-                    href="/topics/javascript/"
+                 <Link
+                    to="/topics/javascript/"
                     className="gtm-track-element"
                     data-gtm-tracking-allowed="true"
                     data-gtm-parent="footer"
                   >
                     JavaScript Tutorial
-                  </a>
+                  </Link>
                   <div className="footer__separator">
                     <span> | </span>
                   </div>
                 </div>
                 <div className="footer__course-link__container">
-                  <a
-                    href="/topics/cpp/"
+                 <Link
+                    to="/topics/cpp/"
                     className="gtm-track-element"
                     data-gtm-tracking-allowed="true"
                     data-gtm-parent="footer"
                   >
                     C++ Tutorial
-                  </a>
+                  </Link>
                   <div className="footer__separator">
                     <span> | </span>
                   </div>
                 </div>
                 <div className="footer__course-link__container">
-                  <a
-                    href="/topics/sql/"
+                 <Link
+                    to="/topics/sql/"
                     className="gtm-track-element"
                     data-gtm-tracking-allowed="true"
                     data-gtm-parent="footer"
                   >
                     SQL Tutorial
-                  </a>
+                  </Link>
                   <div className="footer__separator">
                     <span> | </span>
                   </div>
                 </div>
                 <div className="footer__course-link__container">
-                  <a
-                    href="/topics/data-science/"
+                 <Link
+                    to="/topics/data-science/"
                     className="gtm-track-element"
                     data-gtm-tracking-allowed="true"
                     data-gtm-parent="footer"
                   >
                     Data Science Tutorial
-                  </a>
+                  </Link>
                   <div className="footer__separator">
                     <span> | </span>
                   </div>
                 </div>
                 <div className="footer__course-link__container">
-                  <a
-                    href="/topics/software-engineering/"
+                 <Link
+                    to="/topics/software-engineering/"
                     className="gtm-track-element"
                     data-gtm-tracking-allowed="true"
                     data-gtm-parent="footer"
                   >
                     Software Engineering Tutorial
-                  </a>
+                  </Link>
                   <div className="footer__separator">
                     <span> | </span>
                   </div>
                 </div>
                 <div className="footer__course-link__container">
-                  <a
-                    href="/topics/html/"
+                 <Link
+                    to="/topics/html/"
                     className="gtm-track-element"
                     data-gtm-tracking-allowed="true"
                     data-gtm-parent="footer"
                   >
                     HTML Tutorial
-                  </a>
+                  </Link>
                   <div className="footer__separator">
                     <span> | </span>
                   </div>
                 </div>
                 <div className="footer__course-link__container">
-                  <a
-                    href="/topics/css/"
+                 <Link
+                    to="/topics/css/"
                     className="gtm-track-element"
                     data-gtm-tracking-allowed="true"
                     data-gtm-parent="footer"
                   >
                     CSS Tutorial
-                  </a>
+                  </Link>
                   <span></span>
                 </div>
               </div>

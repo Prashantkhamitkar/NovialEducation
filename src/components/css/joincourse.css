@@ -1,0 +1,26 @@
+/* Default styling for .highlight */
+.highlight {
+  display: inline-block;
+  height: inherit;
+  background-image: url("../../assets/images/highlight.png");
+  background-position: 0 2rem;
+  background-repeat: repeat-x;
+}
+
+/* Media query for mobile screens */
+@media screen and (max-width: 768px) {
+  .highlight {
+    background-position: 0 1.5rem; /* Adjust background position for mobile */
+  }
+
+  .highlight::after {
+    height: 2rem; /* Adjust the height for mobile */
+  }
+}
+
+.highlight::after {
+  content: "";
+  display: block;
+  height: 3rem; /* Adjust as needed */
+  width: 100%;
+}

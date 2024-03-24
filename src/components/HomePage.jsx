@@ -1,6 +1,7 @@
 import React from "react";
 import SvgComponent from "./svgcomponents/SvgComponent";
-
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <>
@@ -32,12 +33,17 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          <div className="">
-            <img
-              src="../../src/assets/images/logo.png"
-              alt="Logo"
-              className=" h-auto"
-            />
+          <div className="w-full mt-10">
+            <Link to="/">
+              <motion.img
+                src="../../src/assets/images/homepage.png"
+                alt="Logo"
+                className=" h-auto cursor-pointer"
+                initial={{ rotateY: 0 }}
+                whileInView={{ rotateY: 360 }}
+                transition={{ duration: 1 }}
+              />
+            </Link>
           </div>
         </div>
       </div>
