@@ -56,12 +56,7 @@ const NavLinks = () => {
           >
             Student Enquiry
           </NavLink>
-          <NavLink
-            to="/feedback"
-            className="text-black hover:text-blue-500  font-normal text-lg  hover:transition-all hover:duration-200 hover:border-b-2 hover:border-blue-500"
-          >
-            Feedback
-          </NavLink>
+         
           <NavLink
             to="/contact"
             className="text-black hover:text-blue-500  font-normal text-lg  hover:transition-all hover:duration-200 hover:border-b-2 hover:border-blue-500"
@@ -214,12 +209,7 @@ const NavLinks = () => {
             >
               Student Enquiry
             </NavLink>
-            <NavLink
-              to="/feedback"
-              className="text-black hover:text-gray-600 font-medium text-sm ml-6 mb-[1rem]"
-            >
-              Feedback
-            </NavLink>
+         
             <NavLink
               to="/contact"
               className="text-black hover:text-gray-600 font-medium text-sm ml-6 mb-[1rem]"

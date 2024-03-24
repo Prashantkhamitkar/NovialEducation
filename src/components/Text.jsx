@@ -3,8 +3,8 @@ import HomePage from "./HomePage";
 const Text = () => {
   return (
     <>
-      <div className="flex flex-col justify-center items-center md:w-[75%] mt-[5.5rem]">
-        <div className="w-half  ml-auto mt-4 overflow-hidden  py-3">
+      <div className="flex flex-col justify-center items-center md:w-[75%] mt-[5rem] ml-4 mr-3">
+        <div className="w-half  ml-auto  overflow-hidden  py-3">
           <HomePage />
         </div>
         <div className="max-w-md self-center rounded-lg overflow-hidden shadow-xl transform hover:scale-105  transition duration-300">
