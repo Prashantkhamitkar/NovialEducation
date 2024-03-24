@@ -3,7 +3,7 @@ import HomePage from "./HomePage";
 const Text = () => {
   return (
     <>
-      <div className="flex flex-col justify-center items-center md:w-[50%] mt-[5rem] ml-auto mr-auto">
+      <div className="flex flex-col justify-center items-center md:w-[50%] mt-[5rem]  mr-[30px]">
         <div className="w-half  ml-10 mr-3  overflow-hidden  py-3">
           <HomePage />
         </div>
