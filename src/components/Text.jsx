@@ -8,7 +8,7 @@ const Text = () => {
           <HomePage />
         </div>
         <div className="max-w-md self-center rounded-lg overflow-hidden shadow-xl transform hover:scale-105  transition duration-300">
-          <div className="px-6 py-8">
+          <div className="pr-[1.5rem] pl-[3.5rem] py-8">
             <h1 className="text-4xl font-bold text-white  mb-4">
               Welcome to Sogdo Academy
             </h1>

@@ -4,7 +4,7 @@ const SvgComponent = (props) => (
     xmlns="http://www.w3.org/2000/svg"
     width={24}
     height={24}
-    style={{ marginTop: "5px" }}
+    style={{ marginTop: "-1px" }}
     fill="#2196F3"
     className="hover:!text-black"
     {...props}

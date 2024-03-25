@@ -12,13 +12,12 @@ const NavLinks = () => {
   const [otprecieved, setotp] = useState(false);
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
-  
   };
   const toggleloginMenu = () => {
     setLoginmenu(!loginmenu);
     setIsOpen(false);
-      setregiform(false);
-      setLoginform(true);
+    setregiform(false);
+    setLoginform(true);
   };
 
   return (
@@ -56,7 +55,7 @@ const NavLinks = () => {
           >
             Student Enquiry
           </NavLink>
-         
+
           <NavLink
             to="/contact"
             className="text-black hover:text-blue-500  font-normal text-lg  hover:transition-all hover:duration-200 hover:border-b-2 hover:border-blue-500"
@@ -209,7 +208,7 @@ const NavLinks = () => {
             >
               Student Enquiry
             </NavLink>
-         
+
             <NavLink
               to="/contact"
               className="text-black hover:text-gray-600 font-medium text-sm ml-6 mb-[1rem]"
@@ -224,7 +223,7 @@ const NavLinks = () => {
               </button>
               <button
                 onClick={toggleloginMenu}
-                className="hover:bg-blue-500 bg-transparent rounded-sm  hover:transition-all hover:duration-200  hover:text-white border-[1px] border-blue-500  text-blue-500  font-bold text-center hover:font-bold "
+                className="hover:!bg-blue-500 bg-transparent rounded-sm  hover:transition-all hover:duration-200  hover:text-white border-[1px] border-blue-500  text-blue-500  font-bold text-center hover:font-bold "
               >
                 Login
               </button>

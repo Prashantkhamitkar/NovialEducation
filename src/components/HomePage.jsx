@@ -27,8 +27,10 @@ const HomePage = () => {
                 <div className="border-l-2 border-blue-500 p-1.5">
                   <SvgComponent />
                 </div>
-                <button className="rounded-none text-blue-500 btn hover:!text-black font-bold p-2">
-                  Download Syllabus
+                <button className="rounded-none  btn  font-medium p-2">
+                  <h5 className="hover:!text-black text-blue-500">
+                    Download Syllabus
+                  </h5>
                 </button>
               </div>
             </div>
