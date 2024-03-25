@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Footer from "./components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import JoinCourses from "./components/JoinCourses";
+import BasicMap from "./components/BasicMap";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="" element />
       </Routes>
       <JoinCourses />
+      <BasicMap/>
       <Footer />
     </>
   );
