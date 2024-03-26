@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+
 const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
   const [role, setrole] = useState("");
   const enablelogin = () => {
@@ -8,9 +9,33 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
   };
   const handleRoleChange = (e) => {
     setrole(e.target.value);
-    console.log(role);
+    // console.log(role);
   };
   const Studentregi = () => {
+    const [formData, setFormData] = useState({
+      firstName: "",
+      lastName: "",
+      phone: "",
+      email: "",
+      password: "",
+      address: "",
+      job: "",
+      education: "",
+      gender: "",
+      profile: null,
+    });
+    const handleChange = (e) => {
+      const { name, value, type, files } = e.target;
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: type === "file" ? files[0] : value,
+      }));
+    };
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log(formData); // Print form data to console
+      // Call backend API to submit form data here
+    };
     return (
       <>
         <div className="mt-28 ml-8 flex flex-wrap flex-col">
@@ -18,7 +43,10 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
             Elevate your <span className="text-gray-900">coding prowess</span>{" "}
           </h1>
 
-          <div className="md:ml-8  justify-center items-start ml-0">
+          <form
+            onSubmit={handleSubmit}
+            className="md:ml-8  justify-center items-start ml-0"
+          >
             <div className="mt-3">
               <label
                 htmlFor="firstName"
@@ -34,8 +62,11 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                   type="text"
                   name="firstName"
                   id="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
                   className="block lg:w-[30rem]   rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Enter Your First Name"
+                  required
                 />
               </div>
             </div>
@@ -55,6 +86,9 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                   type="text"
                   name="lastName"
                   id="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  required
                   className="block lg:w-[30rem]   rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Enter Your Last Name"
                 />
@@ -78,12 +112,15 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                   id="phone"
                   className="block lg:w-[30rem]   rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Enter Your Phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
                 />
               </div>
             </div>
             <div className="mt-3">
               <label
-                htmlFor="email"
+                htmlFor="email1"
                 className="block text-sm font-sm leading-6 text-gray-900"
               >
                 <h4 className="text-gray-800 font-normal cursor-auto text-md">
@@ -95,13 +132,38 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                 <input
                   type="text"
                   name="email"
-                  id="email"
+                  id="email1"
                   className="block lg:w-[30rem]   rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Enter Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                 />
               </div>
             </div>
-
+            <div className="mt-3">
+              <label
+                htmlFor="password"
+                className="block text-sm font-sm leading-6 text-gray-900"
+              >
+                <h4 className="text-gray-800 font-normal cursor-auto text-md">
+                  Enter Password
+                  <sup className="text-red-500 text-sm font-bold">*</sup>
+                </h4>
+              </label>
+              <div className="relative mt-2 rounded-md shadow-sm">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  className="block lg:w-[30rem]   rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
+                  placeholder="Enter Your Password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            </div>
             <div className="mt-3">
               <label
                 htmlFor="address"
@@ -119,6 +181,9 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                   id="address"
                   className="block lg:w-[30rem]   rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Enter Your Address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  required
                 />
               </div>
             </div>
@@ -140,6 +205,9 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                   id="job"
                   className="block lg:w-[30rem]   rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Enter Your Job"
+                  value={formData.job}
+                  onChange={handleChange}
+                  required
                 />
               </div>
             </div>
@@ -160,8 +228,8 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                     name="education"
                     value="Technical"
                     className="cursor-pointer mr-2"
-                    // checked={formData.education === "Technical"}
-                    // onChange={handleChange}
+                    checked={formData.education === "Technical"}
+                    onChange={handleChange}
                     required
                   />
                   Technical
@@ -172,8 +240,8 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                     name="education"
                     value="Non Technical"
                     className="cursor-pointer mr-2"
-                    // checked={formData.education === "Non Technical"}
-                    // onChange={handleChange}
+                    checked={formData.education === "Non Technical"}
+                    onChange={handleChange}
                     required
                   />
                   Non Technical
@@ -197,8 +265,8 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                     name="gender"
                     value="Male"
                     className="cursor-pointer mr-2"
-                    // checked={formData.gender === "Male"}
-                    // onChange={handleChange}
+                    checked={formData.gender === "Male"}
+                    onChange={handleChange}
                     required
                   />
                   Male
@@ -209,8 +277,8 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                     name="gender"
                     value="Female"
                     className="cursor-pointer mr-2"
-                    // checked={formData.gender === "Female"}
-                    // onChange={handleChange}
+                    checked={formData.gender === "Female"}
+                    onChange={handleChange}
                     required
                   />
                   Female
@@ -221,8 +289,8 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                     name="gender"
                     value="Other"
                     className="cursor-pointer mr-2"
-                    // checked={formData.gender === "Other"}
-                    // onChange={handleChange}
+                    checked={formData.gender === "Other"}
+                    onChange={handleChange}
                     required
                   />
                   Other
@@ -247,6 +315,7 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                   id="profile"
                   className="block lg:w-[30rem] rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Upload Your Profile Image"
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -269,12 +338,37 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                 LOG IN
               </span>
             </div>
-          </div>
+          </form>
         </div>
       </>
     );
   };
   const Trainregi = () => {
+    const [formData, setFormData] = useState({
+      firstName: "",
+      lastName: "",
+      phone: "",
+      email: "",
+      password: "",
+      address: "",
+      job: "",
+      education: "",
+      gender: "",
+      resume: null,
+      profile: null,
+    });
+    const handleChange = (e) => {
+      const { name, value, type, files } = e.target;
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: type === "file" ? files[0] : value,
+      }));
+    };
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log(formData); // Print form data to console
+      // Call backend API to submit form data here
+    };
     return (
       <>
         <div className="mt-28 ml-8 flex flex-wrap flex-col">
@@ -282,7 +376,10 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
             Elevate your <span className="text-gray-900">teaching skills</span>{" "}
           </h1>
 
-          <div className="md:ml-8  justify-center items-start ml-0">
+          <form
+            onSubmit={handleSubmit}
+            className="md:ml-8  justify-center items-start ml-0"
+          >
             <div className="mt-3">
               <label
                 htmlFor="firstName"
@@ -300,6 +397,9 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                   id="firstName"
                   className="block lg:w-[30rem]   rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Enter Your First Name"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  required
                 />
               </div>
             </div>
@@ -321,6 +421,9 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                   id="lastName"
                   className="block lg:w-[30rem]   rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Enter Your Last Name"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  required
                 />
               </div>
             </div>
@@ -342,6 +445,9 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                   id="phone"
                   className="block lg:w-[30rem]   rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Enter Your Phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
                 />
               </div>
             </div>
@@ -362,10 +468,35 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                   id="email"
                   className="block lg:w-[30rem]   rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Enter Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                 />
               </div>
             </div>
-
+            <div className="mt-3">
+              <label
+                htmlFor="password"
+                className="block text-sm font-sm leading-6 text-gray-900"
+              >
+                <h4 className="text-gray-800 font-normal cursor-auto text-md">
+                  Enter Password
+                  <sup className="text-red-500 text-sm font-bold">*</sup>
+                </h4>
+              </label>
+              <div className="relative mt-2 rounded-md shadow-sm">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  className="block lg:w-[30rem]   rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
+                  placeholder="Enter Your Password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            </div>
             <div className="mt-3">
               <label
                 htmlFor="address"
@@ -383,6 +514,9 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                   id="address"
                   className="block lg:w-[30rem]   rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Enter Your Address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  required
                 />
               </div>
             </div>
@@ -404,6 +538,9 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                   id="job"
                   className="block lg:w-[30rem]   rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Enter Your Job"
+                  value={formData.job}
+                  onChange={handleChange}
+                  required
                 />
               </div>
             </div>
@@ -424,8 +561,8 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                     name="education"
                     value="Technical"
                     className="cursor-pointer mr-2"
-                    // checked={formData.education === "Technical"}
-                    // onChange={handleChange}
+                    checked={formData.education === "Technical"}
+                    onChange={handleChange}
                     required
                   />
                   Technical
@@ -436,8 +573,8 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                     name="education"
                     value="Non Technical"
                     className="cursor-pointer mr-2"
-                    // checked={formData.education === "Non Technical"}
-                    // onChange={handleChange}
+                    checked={formData.education === "Non Technical"}
+                    onChange={handleChange}
                     required
                   />
                   Non Technical
@@ -461,8 +598,8 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                     name="gender"
                     value="Male"
                     className="cursor-pointer mr-2"
-                    // checked={formData.gender === "Male"}
-                    // onChange={handleChange}
+                    checked={formData.gender === "Male"}
+                    onChange={handleChange}
                     required
                   />
                   Male
@@ -473,8 +610,8 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                     name="gender"
                     value="Female"
                     className="cursor-pointer mr-2"
-                    // checked={formData.gender === "Female"}
-                    // onChange={handleChange}
+                    checked={formData.gender === "Female"}
+                    onChange={handleChange}
                     required
                   />
                   Female
@@ -485,8 +622,8 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                     name="gender"
                     value="Other"
                     className="cursor-pointer mr-2"
-                    // checked={formData.gender === "Other"}
-                    // onChange={handleChange}
+                    checked={formData.gender === "Other"}
+                    onChange={handleChange}
                     required
                   />
                   Other
@@ -510,6 +647,7 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                   id="resume"
                   className="block lg:w-[30rem] rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Upload Your Resume"
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -530,6 +668,7 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                   id="profile"
                   className="block lg:w-[30rem] rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Upload Your Profile Image"
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -552,7 +691,7 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                 LOG IN
               </span>
             </div>
-          </div>
+          </form>
         </div>
       </>
     );
