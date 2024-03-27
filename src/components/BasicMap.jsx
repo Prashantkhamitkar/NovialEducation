@@ -33,7 +33,7 @@ const BasicMap = () => {
   };
   return (
     <>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mb-5">
         <MapContainer center={center} zoom={ZOOM_LEVEL} ref={setMap}>
           <TileLayer
             url={osmProvider.maptiler.url}

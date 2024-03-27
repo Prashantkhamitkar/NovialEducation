@@ -49,12 +49,12 @@ const NavLinks = () => {
           >
             Corporate Training
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/student_enquiry"
             className="text-black hover:text-blue-500  font-normal text-lg  hover:transition-all hover:duration-200 hover:border-b-2 hover:border-blue-500"
           >
             Student Enquiry
-          </NavLink>
+          </NavLink> */}
 
           <NavLink
             to="/contact"
@@ -202,12 +202,12 @@ const NavLinks = () => {
             >
               Corporate Training
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/student_enquiry"
               className="text-black hover:text-gray-600 font-medium text-sm ml-6 mb-[1rem]"
             >
               Student Enquiry
-            </NavLink>
+            </NavLink> */}
 
             <NavLink
               to="/contact"

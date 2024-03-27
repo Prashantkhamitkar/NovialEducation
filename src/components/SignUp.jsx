@@ -12,6 +12,7 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
     // console.log(role);
   };
   const Studentregi = () => {
+    const [filedata, setFiledata] = useState(null);
     const [formData, setFormData] = useState({
       firstName: "",
       lastName: "",
@@ -22,18 +23,35 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
       job: "",
       education: "",
       gender: "",
-      profile: null,
     });
     const handleChange = (e) => {
-      const { name, value, type, files } = e.target;
+      const { name, value } = e.target;
       setFormData((prevFormData) => ({
         ...prevFormData,
-        [name]: type === "file" ? files[0] : value,
+        [name]: value,
       }));
+    };
+    const filedatachange = (e) => {
+      setFiledata(e.target.files[0]);
     };
     const handleSubmit = (e) => {
       e.preventDefault();
-      console.log(formData); // Print form data to console
+      const datas = new FormData();
+      datas.append("firstName", formData.firstName);
+      datas.append("lastName", formData.lastName);
+      datas.append("phone", formData.phone);
+      datas.append("email", formData.email);
+      datas.append("password", formData.password);
+      datas.append("address", formData.address);
+      datas.append("education", formData.education);
+      datas.append("job", formData.job);
+      datas.append("gender", formData.gender);
+      datas.append("file", filedata);
+
+      for (let pair of datas.entries()) {
+        console.log(pair[0] + ": " + pair[1]);
+      }
+      // Print form data to console
       // Call backend API to submit form data here
     };
     return (
@@ -46,6 +64,7 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
           <form
             onSubmit={handleSubmit}
             className="md:ml-8  justify-center items-start ml-0"
+            encType="multipart/form-data"
           >
             <div className="mt-3">
               <label
@@ -311,11 +330,11 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
               <div className="relative mt-2 rounded-md shadow-sm">
                 <input
                   type="file"
-                  name="profile"
-                  id="profile"
+                  name="file"
+                  id="file"
                   className="block lg:w-[30rem] rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Upload Your Profile Image"
-                  onChange={handleChange}
+                  onChange={filedatachange}
                 />
               </div>
             </div>
@@ -344,6 +363,8 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
     );
   };
   const Trainregi = () => {
+    const [profile, setProfile] = useState(null);
+    const [resume, setResume] = useState(null);
     const [formData, setFormData] = useState({
       firstName: "",
       lastName: "",
@@ -354,19 +375,40 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
       job: "",
       education: "",
       gender: "",
-      resume: null,
-      profile: null,
     });
     const handleChange = (e) => {
-      const { name, value, type, files } = e.target;
+      const { name, value } = e.target;
       setFormData((prevFormData) => ({
         ...prevFormData,
-        [name]: type === "file" ? files[0] : value,
+        [name]: value,
       }));
+    };
+    const Profilechange = (e) => {
+      setProfile(e.target.files[0]);
+    };
+    const Resumechange = (e) => {
+      setResume(e.target.files[0]);
     };
     const handleSubmit = (e) => {
       e.preventDefault();
-      console.log(formData); // Print form data to console
+      const datas = new FormData();
+      datas.append("firstName", formData.firstName);
+      datas.append("lastName", formData.lastName);
+      datas.append("phone", formData.phone);
+      datas.append("email", formData.email);
+      datas.append("password", formData.password);
+      datas.append("address", formData.address);
+      datas.append("education", formData.education);
+      datas.append("job", formData.job);
+      datas.append("gender", formData.gender);
+      datas.append("file", profile);
+      datas.append("resume", resume);
+
+      for (let pair of datas.entries()) {
+        console.log(pair[0] + ": " + pair[1]);
+      }
+
+    //   console.log(formData); // Print form data to console
       // Call backend API to submit form data here
     };
     return (
@@ -647,13 +689,13 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                   id="resume"
                   className="block lg:w-[30rem] rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Upload Your Resume"
-                  onChange={handleChange}
+                  onChange={Resumechange}
                 />
               </div>
             </div>
             <div className="mt-3">
               <label
-                htmlFor="profile"
+                htmlFor="file"
                 className="block text-sm font-sm leading-6 text-gray-900"
               >
                 <h4 className="text-gray-800 font-normal cursor-auto text-md">
@@ -664,11 +706,11 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
               <div className="relative mt-2 rounded-md shadow-sm">
                 <input
                   type="file"
-                  name="profile"
-                  id="profile"
+                  name="file"
+                  id="file"
                   className="block lg:w-[30rem] rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Upload Your Profile Image"
-                  onChange={handleChange}
+                  onChange={Profilechange}
                 />
               </div>
             </div>
