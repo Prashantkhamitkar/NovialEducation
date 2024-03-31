@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Myaxios from "./service/Myaxios";
+import Swal from "sweetalert2";
 
 const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
   const [role, setrole] = useState("");
@@ -51,8 +53,33 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
       for (let pair of datas.entries()) {
         console.log(pair[0] + ": " + pair[1]);
       }
-      // Print form data to console
-      // Call backend API to submit form data here
+
+      // Call backend API to submit form data
+      Myaxios.post("/student/signup", datas)
+        .then((res) => {
+          console.log(res.data);
+          // Show success popup
+          Swal.fire({
+            icon: "success",
+            title: "Student registered successfully!",
+            showConfirmButton: false,
+            timer: 2000, // Close after 2 seconds
+          });
+          setTimeout(() => {
+            setLoginform(true);
+            setregiform(false);
+          }, 4000);
+        })
+        .catch((err) => {
+          console.log(err);
+          // Show error popup if submission fails
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong! Please try again later.",
+          });
+        
+        });
     };
     return (
       <>
@@ -408,8 +435,13 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
         console.log(pair[0] + ": " + pair[1]);
       }
 
-    //   console.log(formData); // Print form data to console
-      // Call backend API to submit form data here
+      Myaxios.post("/trainer/signup", datas, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+        .then((res) => console.log(res.data))
+        .catch((err) => console.log(err));
     };
     return (
       <>
@@ -421,6 +453,7 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
           <form
             onSubmit={handleSubmit}
             className="md:ml-8  justify-center items-start ml-0"
+            encType="multipart/form-data"
           >
             <div className="mt-3">
               <label
@@ -495,7 +528,7 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
             </div>
             <div className="mt-3">
               <label
-                htmlFor="email"
+                htmlFor="email2"
                 className="block text-sm font-sm leading-6 text-gray-900"
               >
                 <h4 className="text-gray-800 font-normal cursor-auto text-md">
@@ -507,7 +540,7 @@ const SignUp = ({ setLoginform, setregiform, loginform, regiform }) => {
                 <input
                   type="text"
                   name="email"
-                  id="email"
+                  id="email2"
                   className="block lg:w-[30rem]   rounded-md border-0 py-1.5 pl-3 pr-[3rem] md:pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-lg sm:text-sm sm:leading-6"
                   placeholder="Enter Your Email"
                   value={formData.email}

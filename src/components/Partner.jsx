@@ -31,16 +31,17 @@ const Partner = () => {
             </div>
           </div>
 
-          <div className="partners__description">
+          <div className="partners__description ">
             <div className="partners__companies">
               <div className="partners__company">
-                <motion.span
+                <motion.img
                   initial={{ y: 100, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2, duration: 0.1, ease: "easeOut" }}
-                  className="partners__companies-icon companies facebook one-third hide-in-tablet"
-                ></motion.span>
+                  className="w-[150px] h-[60px] partners__companies-icon"
+                  src="../../src/assets/images/sogdocompany.png"
+                />
               </div>
               <div className="partners__company">
                 <motion.span

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "../../node_modules/leaflet/dist/leaflet.css";
 import osmProvider from "./leaflet-config/osm-provider";
@@ -17,6 +17,7 @@ const BasicMap = () => {
     lat: 26.653953149627977,
     lng: 84.92049405068072,
   });
+
   const ZOOM_LEVEL = 9;
   const [map, setMap] = useState(null);
   const location = useGeolocation();
@@ -33,11 +34,15 @@ const BasicMap = () => {
   };
   return (
     <>
-      <div className="flex flex-col items-center mb-5">
+      <div
+        className="flex leaflet-map-container flex-col items-center mb-5"
+        style={{ position: "relative", zIndex: 0 }}
+      >
         <MapContainer center={center} zoom={ZOOM_LEVEL} ref={setMap}>
           <TileLayer
             url={osmProvider.maptiler.url}
             attribution={osmProvider.maptiler.attribution}
+            zIndex={0}
           />
 
           <Marker

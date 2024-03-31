@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import HomePage from "./HomePage";
+
 const Text = () => {
+  const [showAdditionalInfo, setShowAdditionalInfo] = useState(false);
+
+  const handleToggleInfo = () => {
+    setShowAdditionalInfo(!showAdditionalInfo);
+  };
+
   return (
     <>
       <div className="flex flex-col justify-center items-center md:w-[50%] mt-[5rem]  mr-[30px]">
@@ -20,10 +27,35 @@ const Text = () => {
               succeed in your career.
             </p>
             <div className="text-center">
-              <button className="bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300 transform hover:translate-y-1 hover:shadow-lg md:py-4 md:px-8">
-                Explore Courses
+              <button
+                onClick={handleToggleInfo}
+                className="bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300 transform hover:translate-y-1 hover:shadow-lg md:py-4 md:px-8"
+              >
+                {showAdditionalInfo ? "Close" : "Explore Courses"}
               </button>
             </div>
+            {showAdditionalInfo && (
+              <div className="text-white mt-6">
+                <h2 className="text-xl font-semibold mb-4">Testimonials</h2>
+                <div className="mb-4">
+                  <p className="text-white  leading-relaxed text-lg italic mb-2">
+                    "I had a great experience learning at Sogdo Academy. The
+                    instructors are knowledgeable and supportive, and the course
+                    material is comprehensive."
+                  </p>
+                  <p className="text-sm text-white">- Prashant Khamitkar</p>
+                </div>
+                <div className="mb-4">
+                  <p className="text-white  leading-relaxed text-lg italic mb-2">
+                    "Sogdo Academy helped me enhance my skills and advance in my
+                    career. I highly recommend their courses to anyone looking
+                    to upskill."
+                  </p>
+                  <p className="text-sm text-white">- Nitin</p>
+                </div>
+                {/* Add more testimonials as needed */}
+              </div>
+            )}
           </div>
         </div>
       </div>

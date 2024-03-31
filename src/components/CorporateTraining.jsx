@@ -17,15 +17,19 @@ const CorporateTraining = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
+    /*
+    Myaxios.post("http://localhost/sogdo/api/training_program",formData)
+    .then((res)=>console.log(res.data)).catch((err)=>console.log(err));
+    */
   };
   return (
     <div
       className="grid bg-gradient-to-br from-purple-200 to-purple-300
- grid-cols-1 pl-[6rem]   pb-[3rem] md:grid-cols-2 lg:grid-cols-3 gap-8"
+ grid-cols-1 pl-[6rem]   pb-[3rem] md:grid-cols-2 lg:grid-cols-3 gap-8 "
     >
       {/* Section 1: Information about corporate training programs */}
       <div
-        className="bg-white mt-[3rem]  cursor-pointer hover:scale-110 duration-100 ease-in-out  rounded-lg overflow-hidden shadow-md p-6"
+        className="bg-white mt-[3rem]  cursor-pointer  hover:scale-110 duration-100 ease-in-out  rounded-lg overflow-hidden shadow-md p-6"
         style={{ width: "80%" }}
       >
         <img

@@ -66,7 +66,14 @@ const NavLinks = () => {
 
         {/* Call to Action Buttons */}
         <div className="flex items-center">
-          <button className="bg-red-500 academy-button secondary is-flat font-medium hover:bg-red-400  hover:transition-all hover:duration-200 hover:shadow-red rounded-md text-white px-8 py-2 mr-3">
+          <button
+            className="bg-red-500 academy-button secondary is-flat font-medium hover:bg-red-400  hover:transition-all hover:duration-200 hover:shadow-red rounded-md text-white px-8 py-2 mr-3"
+            onClick={() => {
+              setLoginmenu(!loginmenu);
+              setLoginform(false);
+              setregiform(!regiform);
+            }}
+          >
             APPLY NOW
           </button>
           <button
@@ -218,7 +225,15 @@ const NavLinks = () => {
 
             {/* Call to Action Buttons */}
             <div className="ml-4 flex flex-col mt-8">
-              <button className="bg-red-500 font-medium hover:bg-red-400  hover:transition-all hover:duration-200 hover:shadow-red rounded-md text-white px-8 py-1.5 mb-4">
+              <button
+                className="bg-red-500 font-medium hover:bg-red-400  hover:transition-all hover:duration-200 hover:shadow-red rounded-md text-white px-8 py-1.5 mb-4"
+                onClick={() => {
+                  setLoginmenu(!loginmenu);
+                  setLoginform(false);
+                  setregiform(!regiform);
+                  setIsOpen(!open);
+                }}
+              >
                 APPLY NOW
               </button>
               <button

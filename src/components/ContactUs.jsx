@@ -25,46 +25,46 @@ const ContactUs = () => {
   return (
     <>
       <div className="flex flex-col md:flex-row  justify-center items-center h-screen bg-gradient-to-r from-purple-400 to-blue-500">
-        <div class="flex flex-col justify-between max-w-md mx-4 mb-5 md:!mb-0 bg-white p-6 rounded-lg shadow-md">
-          <div class="grid grid-cols-3 gap-4 mb-6">
-            <div class="text-center">
-              <div class=" font-bold text-yellow-500">126%</div>
-              <div class="text-gray-700">Avg. CTC Hike</div>
+        <div className="flex flex-col justify-between max-w-md mx-4 mb-5 md:!mb-0 bg-white p-6 rounded-lg shadow-md">
+          <div className="grid grid-cols-3 gap-4 mb-6">
+            <div className="text-center">
+              <div className=" font-bold text-yellow-500">126%</div>
+              <div className="text-gray-700">Avg. CTC Hike</div>
             </div>
-            <div class="text-center  text-lg">
-              <div class="font-bold text-blue-500">Top 1%</div>
-              <div class="text-gray-700">Industry Instructors</div>
+            <div className="text-center  text-lg">
+              <div className="font-bold text-blue-500">Top 1%</div>
+              <div className="text-gray-700">Industry Instructors</div>
             </div>
-            <div class="text-center  text-lg">
-              <div class="font-bold text-green-500">900+</div>
-              <div class="text-gray-700">Placement Partners</div>
+            <div className="text-center  text-lg">
+              <div className="font-bold text-green-500">900+</div>
+              <div className="text-gray-700">Placement Partners</div>
             </div>
           </div>
-          <h1 class="text-2xl font-bold mb-4">
+          <h1 className="text-2xl font-bold mb-4">
             Your Path to a Successful Tech Career!
           </h1>
-          <div class="mb-4">
+          <div className="mb-4">
             Now experience the program for{" "}
             <b>
-              <span class="text-yellow-500">FREE</span>
+              <span className="text-yellow-500">FREE</span>
             </b>
           </div>
-          <div class="flex justify-between">
+          <div className="flex justify-between">
             <a
-              href="/academy/free-live-class/"
-              class="bg-blue-500 hover:bg-blue-600 text-white  md:!font-semibold py-2 px-6   rounded-full focus:outline-none focus:shadow-outline transition duration-300"
+              href="/academy/free-live-className/"
+              className="bg-blue-500 hover:bg-blue-600 text-white  md:!font-semibold py-2 px-6   rounded-full focus:outline-none focus:shadow-outline transition duration-300"
             >
-              Book a Live Class
+              Book a Live className
             </a>
             <a
               href="/academy/explore-dashboard/"
-              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full focus:outline-none focus:shadow-outline transition duration-300"
+              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full focus:outline-none focus:shadow-outline transition duration-300"
             >
               Explore Academy
             </a>
           </div>
-          <div class="text-sm mt-4">
-            NEXT BATCH STARTS <span class="text-yellow-500">MID-APRIL</span>
+          <div className="text-sm mt-4">
+            NEXT BATCH STARTS <span className="text-yellow-500">MID-APRIL</span>
           </div>
         </div>
 
@@ -107,9 +107,9 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
-      <div class="relative bg-gradient-to-r from-purple-400 to-blue-500">
-        <div class="container mx-auto py-12">
-          <h1 class="text-lg text-center font-bold mb-4 text-white">
+      <div className="relative bg-gradient-to-r from-purple-400 to-blue-500">
+        <div className="container mx-auto py-12">
+          <h1 className="text-lg text-center font-bold mb-4 text-white">
             Explore Our Academy
           </h1>
           <BasicMap />
